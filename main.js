@@ -32,6 +32,8 @@ function createUserCard(user) {
   const imageElement = document.createElement("img");
   imageElement.src = IMAGE_URL;
   imageElement.alt = "User profile photo";
+  // Append image to card image container
+  cardImgContainer.appendChild(imageElement);
 
   // Create user name element
   const cardTitle = document.createElement("h3");
@@ -46,9 +48,22 @@ function createUserCard(user) {
   const cardDescriptionElement = document.createElement("p");
   cardDescriptionElement.textContent = user.description;
 
+  // Create favorite music element
+  const favoriteMusicElement = document.createElement("ul");
+  user.fav_music.bands.forEach((band) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = band;
+    // Append list item to favorite music list
+    favoriteMusicElement.appendChild(listItem);
+  });
+
   //Render user card
-  cardImgContainer.appendChild(imageElement);
-  card.append(cardTitle, cardAgeElement, cardDescriptionElement);
+  card.append(
+    cardTitle,
+    cardAgeElement,
+    cardDescriptionElement,
+    favoriteMusicElement
+  );
 
   return card;
 }
