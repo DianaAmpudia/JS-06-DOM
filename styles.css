@@ -1,20 +1,35 @@
-* {
-  font-family: "Poppins", sans-serif;
-}
-
 body {
-  background: rgb(168, 153, 215);
+  background: rgb(179, 180, 180);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
-.card-title {
-  color: rgb(136, 113, 170);
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .card {
+  align-items: center;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 1vw;
+  margin: 3vw;
+  width: 60vw;
+}
+
+#card-img-container {
+  margin: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
+  color: black;
+  font-weight: 600;
 }
