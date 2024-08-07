@@ -20,13 +20,22 @@ const USERS = [
     fav_music: {
       bands: ["Band 1", "Band 2", "Band 3", "Band 4"],
     },
-  },
+  }
 ];
 
-// Function to create a card for each user
+// Function to create a card for each user.
+// Intead of using document.getElementById, now we use document.createElement to create a container for every user.
 function createUserCard(user) {
-  const card = document.getElementById("card-container");
-  const cardImgContainer = document.getElementById("card-img-container");
+  //const card = document.getElementById("card-container");
+  //const cardImgContainer = document.getElementById("card-img-container");
+
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.id = ("card-container");
+
+  const cardImgContainer = document.createElement("div");
+  cardImgContainer.id = "card-img-container";
+  card.appendChild(cardImgContainer);
 
   // Create image element
   const imageElement = document.createElement("img");
@@ -49,12 +58,14 @@ function createUserCard(user) {
   cardDescriptionElement.textContent = user.description;
 
   // Create favorite music element
-  const favoriteMusicElement = document.createElement("ul");
+  const favMusicElement= document.createElement("p");
+  favMusicElement.textContent = "Favorite bands: ";
+  const favoriteBandsElement = document.createElement("ul");
   user.fav_music.bands.forEach((band) => {
     const listItem = document.createElement("li");
     listItem.textContent = band;
     // Append list item to favorite music list
-    favoriteMusicElement.appendChild(listItem);
+    favoriteBandsElement.appendChild(listItem);
   });
 
   //Render user card
@@ -62,13 +73,16 @@ function createUserCard(user) {
     cardTitle,
     cardAgeElement,
     cardDescriptionElement,
-    favoriteMusicElement
+    favMusicElement,
+    favoriteBandsElement
   );
 
   return card;
 }
 
-// Create and add a card for each user
+// Creates a card for each user and appends it to the container
+const container = document.getElementById("container");
 USERS.forEach((user) => {
-  createUserCard(user);
+  const userCard = createUserCard(user);
+  container.appendChild(userCard);
 });
