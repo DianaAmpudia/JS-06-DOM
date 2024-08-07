@@ -5,20 +5,20 @@ const IMAGE_URL = "https://placehold.co/200";
 const USERS = [
   {
     id: 1,
-    user_name: "User1",
-    description: "lorem ipsum",
+    user_name: "epicGamer247 🎮",
+    description: "When I'm not in front of my screens, I love to get outdoors and go hiking. It's a great way to recharge and find inspiration for my next gaming marathon.",
     age: "46",
     fav_music: {
-      bands: ["Band 1", "Band 2", "Band 3", "Band 4"],
+      bands: ["Metallica", "Led Zeppelin", "Pink Floyd", "Queen"],
     },
   },
   {
     id: 2,
-    user_name: "User LastName",
-    description: "Lorem lorem lorem",
+    user_name: "starry.dream🌟",
+    description: "I play guitar and sing in a local indie band. We gig at small venues on weekends, and I'm always writing new songs inspired by my daily experiences.",
     age: "23",
     fav_music: {
-      bands: ["Band 1", "Band 2", "Band 3", "Band 4"],
+      bands: ["Vampire Weekend", "Boygenius", "Muna", "Wolf Alice"],
     },
   }
 ];
